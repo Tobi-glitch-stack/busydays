@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrapbook</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: linear-gradient(#ffde59,#e45d0b);
+      background-size: 300% 300% ;
+      animation: color 12s ease-in-out infinite;
+    }
+    
+    
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color:#ad480a;
+    }
+    .form-section {
+      max-width: 600px;
+      margin: 0 auto 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    input, textarea, button {
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    
+    button {
+      background-color:#ad480a;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #eb5e07;
+    }
+    .entries {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .entry {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    .entry img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>My Scrapbook</h1>
+  <div class="form-section">
+    <input type="text" id="title" placeholder="Title">
+    <textarea id="description" placeholder="Description"></textarea>
+    <input type="text" id="imageUrl" placeholder="Image URL (optional)">
+    <button onclick="addEntry()">Add Entry</button>
+  </div>
+
+  <div class="entries" id="entries"></div>
+
+  <script>
+    function addEntry() {
+      const title = document.getElementById('title').value;
+      const description = document.getElementById('description').value;
+      const imageUrl = document.getElementById('imageUrl').value;
+
+      if (!title || !description) return;
+
+      const entryDiv = document.createElement('div');
+      entryDiv.className = 'entry';
+
+      const entryHTML = `
+        <h2>${title}</h2>
+        <p>${description}</p>
+        ${imageUrl ? `<img src="${imageUrl}" alt="${title}">` : ''}
+      `;
+
+      entryDiv.innerHTML = entryHTML;
+      document.getElementById('entries').appendChild(entryDiv);
+
+      document.getElementById('title').value = '';
+      document.getElementById('description').value = '';
+      document.getElementById('imageUrl').value = '';
+    }
+  </script>
+</body>
+</html>

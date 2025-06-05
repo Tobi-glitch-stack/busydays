@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ripoe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(45deg, #d2001a,#7462ff,#f78104,#23d5ab);
+      background-size: 300% 300% ;
+      animation: color 12s ease-in-out infinite;
+    }
+@keyframes color {
+    0%{
+        background-position:0 50% ;
+    }
+     50%{
+        background-position:100% 50% ;
+    } 
+    100%{
+        background-position:0 50% ;
+    }
+}
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: -1;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn-container {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .btn {
+      background-color: #e50914;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      font-size: 1rem;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #f40612;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+  <h1>Welcome to Ripoe</h1>
+  <i><p>Your dynamic tool to keep up on your busy days</p></i>
+  <p>Choose where you want to go</p>
+  <div class="btn-container">
+    <a href="C:\Users\Tobi\Desktop\Ibiso\To-do list.html" class="btn">Go to my To-do List</a>
+    <a href="C:\Users\Tobi\Desktop\Ibiso\Scrapbook.html" class="btn">Go to my Scrap book</a>
+    <a href="C:\Users\Tobi\Desktop\Ibiso\Breathe & Pop.html" class="btn">Play a game</a>
+
+  </div>
+</body>
+</html>
